@@ -1,16 +1,16 @@
 #mViP 
 
-Funkcje: <br />
+Funkcje: 
 
-    - Konfiguracja flagi dla vip ✅ <br /> (init project)
-    - Włączanie / wyłączanie powiadomień jak vip wchodzi na serwer ✅ <br /> (init project)
+    - Konfiguracja flagi dla vip ✅  (init project)
+    - Włączanie / wyłączanie powiadomień jak vip wchodzi na serwer ✅  (init project)
 
-    - Wyłączone bonusy na pistolach ✅ <br /> (update #1)
-    - Konfigurowalne startowe HP dla ViP ✅ <br /> (update #1)
-    - Konfigurowalne maksymalne HP dla ViP ✅ <br /> (update #1)
+    - Wyłączone bonusy na pistolach ✅  (update #1)
+    - Konfigurowalne startowe HP dla ViP ✅  (update #1)
+    - Konfigurowalne maksymalne HP dla ViP ✅  (update #1)
     
-    - Konfigurowalny bonus HP za zabójstwo dla ViP ✅ <br /> (update #2)
-    - Konfigurowalny bonus HP za zabójstwo nożem dla ViP ✅ <br /> (update #2)
-    - Konfigurowalny bonus HP za zabójstwo poprzez strzał w głowę dla ViP ✅ <br /> (update #2)
+    - Konfigurowalny bonus HP za zabójstwo dla ViP ✅  (update #2)
+    - Konfigurowalny bonus HP za zabójstwo nożem dla ViP ✅  (update #2)
+    - Konfigurowalny bonus HP za zabójstwo poprzez strzał w głowę dla ViP ✅ (update #2)
 
-    - Konfigurowalny bonus granatów na początku rundy HE/Fire/Smoke/Flash za zabójstwo dla ViP ✅ <br /> (update #3)
+    - Konfigurowalny bonus granatów na początku rundy HE/Fire/Smoke/Flash dla ViP ✅ (update #3)
