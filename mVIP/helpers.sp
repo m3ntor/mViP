@@ -27,9 +27,56 @@ stock void AddBonusHealth(int iClient, int iBonusHealth){
 	SetEntityHealth(iClient, iClientHealthWithBonus);
 }
 
-bool IsKnifeClass(const char[] classname)
+bool IsKnifeClass(const char[] sClassname)
 {
-	if ((StrContains(classname, "knife") > -1 && strcmp(classname, "weapon_knifegg") != 0) || StrContains(classname, "bayonet") > -1)
+	if ((StrContains(sClassname, "knife") > -1 && strcmp(sClassname, "weapon_knifegg") != 0) || StrContains(sClassname, "bayonet") > -1)
 		return true;
 	return false;
+}
+
+public Action GivePlayerGrenades(Handle timer, int iClient)
+{
+	if(IsValidClient(iClient)){
+		
+		if (g_cvViPHeGrenade.BoolValue && GetClientHEGrenades(iClient) == 0) { GivePlayerItem(iClient,"weapon_hegrenade"); }
+		
+		if (g_cvViPSmokeGrenade.BoolValue && GetClientSmokeGrenades(iClient) == 0) { GivePlayerItem(iClient,"weapon_smokegrenade"); }
+		
+		if (g_cvViPFlashGrenade.BoolValue && GetClientFlashbangs(iClient) == 0) { GivePlayerItem(iClient,"weapon_flashbang"); }
+		
+		if(g_cvViPFireGrenade.BoolValue && GetClientFireGrenades(iClient) == 0){
+			switch(GetClientTeam(iClient))
+			{
+				case CS_TEAM_T:
+				{
+					GivePlayerItem(iClient,"weapon_molotov");
+				}
+				case CS_TEAM_CT:
+				{
+					GivePlayerItem(iClient,"weapon_incgrenade");
+				}
+			}
+		}
+	}
+}
+
+
+stock int GetClientHEGrenades(iClient)
+{
+	return GetEntProp(iClient, Prop_Data, "m_iAmmo", _, HEGrenadeOffset);
+}
+
+stock int GetClientSmokeGrenades(iClient)
+{
+	return GetEntProp(iClient, Prop_Data, "m_iAmmo", _, SmokegrenadeOffset);
+}
+
+stock int GetClientFlashbangs(iClient)
+{
+	return GetEntProp(iClient, Prop_Data, "m_iAmmo", _, FlashbangOffset);
+}
+
+stock int GetClientFireGrenades(iClient)
+{
+	return GetEntProp(iClient, Prop_Data, "m_iAmmo", _, FireGrenadesOffset);
 }

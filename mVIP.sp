@@ -27,5 +27,5 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	LoadConVars();
-	HookEvents();	
+	HookEvents();
 }

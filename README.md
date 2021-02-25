@@ -12,3 +12,5 @@ Funkcje: <br />
     - Konfigurowalny bonus HP za zabójstwo dla ViP ✅ <br /> (update #2)
     - Konfigurowalny bonus HP za zabójstwo nożem dla ViP ✅ <br /> (update #2)
     - Konfigurowalny bonus HP za zabójstwo poprzez strzał w głowę dla ViP ✅ <br /> (update #2)
+
+    - Konfigurowalny bonus granatów na początku rundy HE/Fire/Smoke/Flash za zabójstwo dla ViP ✅ <br /> (update #3)
