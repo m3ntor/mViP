@@ -4,6 +4,7 @@
 
 #include <sourcemod>
 #include <sdktools>
+#include <cstrike>
 
 #define VIP_PREFIX " ★\x02[VIP]\x04"
 
@@ -26,21 +27,5 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	LoadConVars();
-	HookEvents();
-	
-	RegConsoleCmd("sm_vip", CommandVIP);
+	HookEvents();	
 }
-
-public Action CommandVIP(int iClient, int iArgs){
-	if(IsValidClient(iClient) && IsPlayerVip(iClient)){
-		PrintToChat(iClient, "Masz VIP'a");
-		return Plugin_Handled;
-	}
-	PrintToChat(iClient, "Nie masz VIP'a");
-	return Plugin_Handled;
-}
-
-
-
-
-
