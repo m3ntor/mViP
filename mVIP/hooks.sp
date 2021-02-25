@@ -29,7 +29,7 @@ public Action PlayerSpawn_Event(Event hEvent, const char[] name, bool dontBroadc
 	if(IsValidClient(iClient) && IsPlayerVip(iClient) && !IsPistolOrKnifeRound())
 	{
 		SetEntityHealth(iClient, g_cvViPStartRoundHp.IntValue);
-		CreateTimer(0.5,GivePlayerGrenades,iClient);
+		CreateTimer(0.5,GivePlayerBonuses,iClient);
 	}
 }
 

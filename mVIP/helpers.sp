@@ -34,7 +34,7 @@ bool IsKnifeClass(const char[] sClassname)
 	return false;
 }
 
-public Action GivePlayerGrenades(Handle timer, int iClient)
+public Action GivePlayerBonuses(Handle timer, int iClient)
 {
 	if(IsValidClient(iClient)){
 		
@@ -54,6 +54,7 @@ public Action GivePlayerGrenades(Handle timer, int iClient)
 				case CS_TEAM_CT:
 				{
 					GivePlayerItem(iClient,"weapon_incgrenade");
+					if (g_cvViPDefuseKit.BoolValue && GetClientDefuseKit(iClient) == 0) { GivePlayerItem(iClient, "item_defuser"); }
 				}
 			}
 		}
@@ -61,22 +62,27 @@ public Action GivePlayerGrenades(Handle timer, int iClient)
 }
 
 
-stock int GetClientHEGrenades(iClient)
+stock int GetClientHEGrenades(int iClient)
 {
 	return GetEntProp(iClient, Prop_Data, "m_iAmmo", _, HEGrenadeOffset);
 }
 
-stock int GetClientSmokeGrenades(iClient)
+stock int GetClientSmokeGrenades(int iClient)
 {
 	return GetEntProp(iClient, Prop_Data, "m_iAmmo", _, SmokegrenadeOffset);
 }
 
-stock int GetClientFlashbangs(iClient)
+stock int GetClientFlashbangs(int iClient)
 {
 	return GetEntProp(iClient, Prop_Data, "m_iAmmo", _, FlashbangOffset);
 }
 
-stock int GetClientFireGrenades(iClient)
+stock int GetClientFireGrenades(int iClient)
 {
 	return GetEntProp(iClient, Prop_Data, "m_iAmmo", _, FireGrenadesOffset);
+}
+
+stock int GetClientDefuseKit(int iClient)
+{
+	return GetEntProp(iClient, Prop_Send, "m_bHasDefuser");
 }

@@ -25,5 +25,7 @@ public void LoadConVars()
 	
 	g_cvViPFireGrenade = CreateConVar("mvip_fire_grenade_for_vip", "1", "Bonus inc/molotov grenade for ViP on spawn", _, true, 0.0, true, 1.0);
 	
+	g_cvViPDefuseKit = CreateConVar("mvip_defuse_kit_for_vip", "1", "Bonus defuse kit for ViP on spawn", _, true, 0.0, true, 1.0);
+	
 	AutoExecConfig(true, "mVIP");
 }

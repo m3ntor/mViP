@@ -14,3 +14,5 @@ Funkcje:
     - Konfigurowalny bonus HP za zabójstwo poprzez strzał w głowę dla ViP ✅ (update #2)
 
     - Konfigurowalny bonus granatów na początku rundy HE/Fire/Smoke/Flash dla ViP ✅ (update #3)
+
+    - Konfigurowalny bonus defuse kit dla ViP(Po stronie CT) ✅ (update #3.1)

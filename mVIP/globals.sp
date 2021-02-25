@@ -26,4 +26,4 @@ ConVar g_cvViPHeGrenade;
 ConVar g_cvViPSmokeGrenade;
 ConVar g_cvViPFireGrenade;
 ConVar g_cvViPFlashGrenade;
-
+ConVar g_cvViPDefuseKit;
