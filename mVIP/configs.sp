@@ -11,6 +11,12 @@ public void LoadConVars()
 	
 	g_cvViPMaxHp = CreateConVar("mvip_max_hp", "110", "Max HP for ViP", _, true, 0.0, true, 1000.0);
 	
+	g_cvViPHealthBonusPerKill= CreateConVar("mvip_health_bonus_per_kill", "1", "Bonus HP per kill for ViP", _, true, 0.0, true, 1000.0);
+	
+	g_cvViPHealthBonusPerHeadshotKill= CreateConVar("mvip_health_bonus_per_headshot_kill", "2", "Bonus HP per hewadshot kill for ViP", _, true, 0.0, true, 1000.0);
+	
+	g_cvViPHealthBonusPerKnifeKill= CreateConVar("mvip_health_bonus_per_knife_kill", "3", "Bonus HP per knife kill for ViP", _, true, 0.0, true, 1000.0);
+	
 	
 	AutoExecConfig(true, "mVIP");
 }
