@@ -27,5 +27,8 @@ public void LoadConVars()
 	
 	g_cvViPDefuseKit = CreateConVar("mvip_defuse_kit_for_vip", "1", "Bonus defuse kit for ViP on spawn", _, true, 0.0, true, 1.0);
 	
+	g_cvViPKevlarEnable = CreateConVar("mvip_kevlar_enable", "1", "Bonus kevlar ViP on spawn", _, true, 0.0, true, 1.0);
+	g_cvViPKevlarValue = CreateConVar("mvip_kevlar_value", "100", "Setting ammount kevlar for vip on spawn", _, true, 0.0, true, 150.0);
+	
 	AutoExecConfig(true, "mVIP");
 }

@@ -15,4 +15,9 @@ Funkcje:
 
     - Konfigurowalny bonus granatów na początku rundy HE/Fire/Smoke/Flash dla ViP ✅ (update #3)
 
-    - Konfigurowalny bonus defuse kit dla ViP(Po stronie CT) ✅ (update #3.1)
+    - Konfigurowalny bonus defuse kit dla ViP (Po stronie CT) ✅ (update #3.1)
+
+    - Konfigurowalny bonusowy kevlar dla ViP  ✅ (update #3.2)
+
+    - chat tylko dla vipa VIPa ✍️
+    -

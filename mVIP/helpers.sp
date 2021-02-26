@@ -58,6 +58,11 @@ public Action GivePlayerBonuses(Handle timer, int iClient)
 				}
 			}
 		}
+		
+		if(g_cvViPKevlarEnable.BoolValue){
+			GivePlayerItem( iClient, "item_assaultsuit");
+			SetEntProp(iClient, Prop_Send, "m_ArmorValue", g_cvViPKevlarValue.IntValue);
+		}
 	}
 }
 

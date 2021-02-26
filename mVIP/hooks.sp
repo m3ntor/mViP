@@ -47,12 +47,11 @@ public Action PlayerDeath_Event(Event hEvent, const char[] name, bool dontBroadc
 		
 		if (bHeadshot) {
 			AddBonusHealth(iAttacker, g_cvViPHealthBonusPerHeadshotKill.IntValue);
-			
 			return; }
 		
 		if(IsKnifeClass(sWeapon)) {
-			
-			AddBonusHealth(iAttacker, g_cvViPHealthBonusPerKnifeKill.IntValue); return;
+			AddBonusHealth(iAttacker, g_cvViPHealthBonusPerKnifeKill.IntValue);
+			return;
 		}
 		
 		AddBonusHealth(iAttacker, g_cvViPHealthBonusPerKill.IntValue);
