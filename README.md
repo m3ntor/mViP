@@ -18,6 +18,7 @@ Funkcje:
     - Konfigurowalny bonus defuse kit dla ViP (Po stronie CT) ✅ (update #3.1)
 
     - Konfigurowalny bonusowy kevlar dla ViP  ✅ (update #3.2)
+        - Dodanie wyboru typu kevlara (0 -  brak  | 1- tylko armor | 2 - armor + helmet)✅ (update #3.2.1)
 
     - chat tylko dla vipa VIPa ✍️
     -
