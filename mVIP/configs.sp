@@ -24,7 +24,9 @@ public void LoadConVars()
 	g_cvViPSmokeGrenade = CreateConVar("mvip_smoke_grenade_for_vip", "1", "Bonus smoke grenade for ViP on spawn", _, true, 0.0, true, 1.0);
 	
 	g_cvViPFireGrenade = CreateConVar("mvip_fire_grenade_for_vip", "1", "Bonus inc/molotov grenade for ViP on spawn", _, true, 0.0, true, 1.0);
-	
+
+	g_cvViPDecoyGrenade = CreateConVar("mvip_decoy_grenade_for_vip", "1", "Bonus decoy grenade for ViP on spawn", _, true, 0.0, true, 1.0);
+
 	g_cvViPDefuseKit = CreateConVar("mvip_defuse_kit_for_vip", "1", "Bonus defuse kit for ViP on spawn", _, true, 0.0, true, 1.0);
 	
 	g_cvViPKevlarType = CreateConVar("mvip_kevlar_type", "1", "0 - no kevlar \n 1- only kevlar \n 2- kevlar + helmet", _, true, 0.0, true, 2.0);

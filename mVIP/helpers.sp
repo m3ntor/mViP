@@ -59,6 +59,8 @@ public Action GivePlayerBonuses(Handle timer, int iClient)
 			}
 		}
 		
+		if (g_cvViPDecoyGrenade.BoolValue && GetClientDecoyGrenades(iClient) == 0) { GivePlayerItem(iClient,"weapon_decoy"); }
+		
 		if(g_cvViPKevlarType.IntValue == 1){
 			GivePlayerItem( iClient, "item_kevlar");
 			SetEntProp(iClient, Prop_Send, "m_ArmorValue", g_cvViPKevlarValue.IntValue);
@@ -88,6 +90,11 @@ stock int GetClientFlashbangs(int iClient)
 stock int GetClientFireGrenades(int iClient)
 {
 	return GetEntProp(iClient, Prop_Data, "m_iAmmo", _, FireGrenadesOffset);
+}
+
+stock int GetClientDecoyGrenades(int iClient)
+{
+	return GetEntProp(iClient, Prop_Data, "m_iAmmo", _, DecoyGrenadeOffset);
 }
 
 stock int GetClientDefuseKit(int iClient)
