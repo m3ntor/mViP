@@ -54,7 +54,10 @@ public Action GivePlayerBonuses(Handle timer, int iClient)
 				case CS_TEAM_CT:
 				{
 					GivePlayerItem(iClient,"weapon_incgrenade");
-					if (g_cvViPDefuseKit.BoolValue && GetClientDefuseKit(iClient) == 0) { GivePlayerItem(iClient, "item_defuser"); }
+					if (g_cvViPDefuseKit.BoolValue && GetClientDefuseKit(iClient) == 0) {
+						SetEntProp(iClient, Prop_Send, "m_bHasDefuser", 1);
+						//GivePlayerItem(iClient, "item_defuser");
+					}
 				}
 			}
 		}
@@ -62,11 +65,10 @@ public Action GivePlayerBonuses(Handle timer, int iClient)
 		if (g_cvViPDecoyGrenade.BoolValue && GetClientDecoyGrenades(iClient) == 0) { GivePlayerItem(iClient,"weapon_decoy"); }
 		
 		if(g_cvViPKevlarType.IntValue == 1){
-			GivePlayerItem( iClient, "item_kevlar");
 			SetEntProp(iClient, Prop_Send, "m_ArmorValue", g_cvViPKevlarValue.IntValue);
 		} else if(g_cvViPKevlarType.IntValue == 2){
-			GivePlayerItem( iClient, "item_assaultsuit");
 			SetEntProp(iClient, Prop_Send, "m_ArmorValue", g_cvViPKevlarValue.IntValue);
+			SetEntProp(iClient, Prop_Send, "m_bHasHelmet", 1);
 		}
 	}
 }
