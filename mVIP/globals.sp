@@ -31,3 +31,8 @@ ConVar g_cvViPDefuseKit;
 
 ConVar g_cvViPKevlarType;
 ConVar g_cvViPKevlarValue;
+
+ConVar g_cvMaxRounds;
+ConVar g_cvHalfTime;
+ConVar g_cvBonusOnFirstRound;
+ConVar g_cvBonusAfterHalfTime;

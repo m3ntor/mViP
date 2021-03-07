@@ -33,5 +33,15 @@ public void LoadConVars()
 	
 	g_cvViPKevlarValue = CreateConVar("mvip_kevlar_value", "100", "Setting ammount kevlar for vip on spawn", _, true, 0.0, true, 150.0);
 	
+	
+	g_cvMaxRounds = FindConVar("mp_maxrounds");
+	
+	g_cvHalfTime = FindConVar("mp_halftime");
+	
+	g_cvBonusOnFirstRound = CreateConVar("mvip_bonus_on_first_round", "1", "Bonus for ViP on first round \n knife round is first round", _, true, 0.0, true, 1.0);
+	g_cvBonusAfterHalfTime = CreateConVar("mvip_bonus_after_half_time", "1", "Bonus for ViP after half time \n pistol round after half time in competetive", _, true, 0.0, true, 1.0);
+
+	
+	
 	AutoExecConfig(true, "mVIP");
 }

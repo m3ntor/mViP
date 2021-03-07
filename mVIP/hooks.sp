@@ -26,7 +26,7 @@ public Action PlayerSpawn_Event(Event hEvent, const char[] name, bool dontBroadc
 {
 	int iClient = GetClientOfUserId(hEvent.GetInt("userid"));
 	
-	if(IsValidClient(iClient) && IsPlayerVip(iClient) && !IsPistolOrKnifeRound())
+	if(IsValidClient(iClient) && IsPlayerVip(iClient))
 	{
 		SetEntityHealth(iClient, g_cvViPStartRoundHp.IntValue);
 		CreateTimer(0.5,GivePlayerBonuses,iClient);
@@ -38,9 +38,13 @@ public Action PlayerDeath_Event(Event hEvent, const char[] name, bool dontBroadc
 	int iAttacker = GetClientOfUserId(hEvent.GetInt("attacker"));
 	int iVictim = GetClientOfUserId(hEvent.GetInt("userid"));
 	
-	if((IsValidClient(iAttacker) && IsValidClient(iVictim)) && IsPlayerVip(iAttacker) && !IsPistolOrKnifeRound() && GetClientTeam(iAttacker) != GetClientTeam(iVictim))
+	if((IsValidClient(iAttacker) && IsValidClient(iVictim)) && IsPlayerVip(iAttacker) && GetClientTeam(iAttacker) != GetClientTeam(iVictim))
 	{
 		bool bHeadshot = hEvent.GetBool("headshot", false);
+		
+		if (!g_cvBonusOnFirstRound.BoolValue && GetRoundCount() == 0) { return; }
+		
+		if (!g_cvBonusAfterHalfTime.BoolValue && g_cvHalfTime.IntValue == 1 && GetRoundCount() == (g_cvMaxRounds.IntValue / 2)) { return; }
 		
 		char sWeapon[64];
 		hEvent.GetString("weapon", sWeapon, sizeof(sWeapon));

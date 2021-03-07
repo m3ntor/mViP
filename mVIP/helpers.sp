@@ -13,7 +13,7 @@ stock bool IsWarmUp(){ return GameRules_GetProp("m_bWarmupPeriod") == 1; }
 
 stock int GetRoundCount() { return GetTeamScore(CS_TEAM_CT) + GetTeamScore(CS_TEAM_T); }
 
-stock int IsPistolOrKnifeRound() { return GetRoundCount() == 0 || GetRoundCount() == 15; }
+//stock int IsPistolOrKnifeRound() { return GetRoundCount() == 0 || GetRoundCount() == 15; }
 
 
 stock void AddBonusHealth(int iClient, int iBonusHealth){
@@ -38,6 +38,10 @@ public Action GivePlayerBonuses(Handle timer, int iClient)
 {
 	if(IsValidClient(iClient)){
 		
+		if (!g_cvBonusOnFirstRound.BoolValue && GetRoundCount() == 0) { return; }
+		
+		if (!g_cvBonusAfterHalfTime.BoolValue && g_cvHalfTime.IntValue == 1 && GetRoundCount() == (g_cvMaxRounds.IntValue / 2)) { return; }
+		
 		if (g_cvViPHeGrenade.BoolValue && GetClientHEGrenades(iClient) == 0) { GivePlayerItem(iClient,"weapon_hegrenade"); }
 		
 		if (g_cvViPSmokeGrenade.BoolValue && GetClientSmokeGrenades(iClient) == 0) { GivePlayerItem(iClient,"weapon_smokegrenade"); }
@@ -56,7 +60,6 @@ public Action GivePlayerBonuses(Handle timer, int iClient)
 					GivePlayerItem(iClient,"weapon_incgrenade");
 					if (g_cvViPDefuseKit.BoolValue && GetClientDefuseKit(iClient) == 0) {
 						SetEntProp(iClient, Prop_Send, "m_bHasDefuser", 1);
-						//GivePlayerItem(iClient, "item_defuser");
 					}
 				}
 			}
