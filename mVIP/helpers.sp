@@ -58,11 +58,12 @@ public Action GivePlayerBonuses(Handle timer, int iClient)
 				case CS_TEAM_CT:
 				{
 					GivePlayerItem(iClient,"weapon_incgrenade");
-					if (g_cvViPDefuseKit.BoolValue && GetClientDefuseKit(iClient) == 0) {
-						SetEntProp(iClient, Prop_Send, "m_bHasDefuser", 1);
-					}
 				}
 			}
+		}
+		
+		if (g_cvViPDefuseKit.BoolValue && GetClientDefuseKit(iClient) == 0 && GetClientTeam(iClient) == CS_TEAM_CT) {
+			SetEntProp(iClient, Prop_Send, "m_bHasDefuser", 1);
 		}
 		
 		if (g_cvViPDecoyGrenade.BoolValue && GetClientDecoyGrenades(iClient) == 0) { GivePlayerItem(iClient,"weapon_decoy"); }
